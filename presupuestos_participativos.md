@@ -16,6 +16,7 @@ Voto acumulativo: los votos valen según el coste de los proyectos. Un votante t
 Voto transferible: permite transferir votos de proyectos descartados a otros que sí pueden ser elegidos. Por ejemplo, el mecanismo de segunda vuelta instantánea (*instant runoff voting*) elimina secuencialmente las propuestas con menos votos y transfiere sus votos a las siguientes preferencias. Como contrapartida, se aumenta la complejidad a la hora de votar.
 
 
+## Comparativa
 
 ![](mean-difference-in-cost-distribution.png)
 Figura 1
