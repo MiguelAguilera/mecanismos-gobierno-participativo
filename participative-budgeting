@@ -1,0 +1,176 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import matplotlib.pyplot as plt
+import json
+import numpy as np
+
+Np=10
+Pt=100
+Nv=1000
+
+def simple(prefs,Pp,Pt):
+	V=list(np.zeros(len(Pp)))
+	for pref in prefs:
+		for i in pref[0:4]:
+			V[i]+=1
+	R=[]
+	p=0
+	for i in np.argsort(V)[::-1]:
+		if Pt-p-Pp[i] >0:
+			R+=[i]
+			p+=Pp[i]
+			
+	return R,V
+	
+def cost_aware(prefs,Pp,Pt):
+	V=list(np.zeros(len(Pp)))
+	for pref in prefs:
+		for i in pref[0:4]:
+			V[i]+=1.0/Pp[i]
+	R=[]
+	p=0
+	for i in np.argsort(V)[::-1]:
+		if Pt-p-Pp[i] >0:
+			R+=[i]
+			p+=Pp[i]
+			
+	return R,V
+
+def CV(prefs,Pp,Pt):
+	V=list(np.zeros(len(Pp)))
+	for pref in prefs:
+		p=0
+		for i in pref:
+			if Pt-p-Pp[i] >0:
+				p+=Pp[i]
+				V[i]+=1
+	R=[]
+	p=0
+	for i in np.argsort(V)[::-1]:
+		if Pt-p-Pp[i] >0:
+			R+=[i]
+			p+=Pp[i]
+			
+	return R,V
+	
+def IRV(prefs,Pp,Pt,bf):
+	V=np.zeros((len(prefs),len(Pp))).astype(int)
+	V1=np.zeros((len(prefs),len(Pp))).astype(int)
+	for j,pref in enumerate(prefs):
+		p=0
+		for i in pref:
+			if Pt-p-Pp[i] >0:
+				p+=Pp[i]
+				V[j,i]+=1
+			elif Pt*(1.0+bf)-p-Pp[i] >0:
+				p+=Pp[i]
+				V1[j,i]+=1
+				
+	inds=np.array(range(len(Pp)))
+
+	while np.sum(Pp[inds])>Pt:
+		v=np.sum(V,axis=0)
+		i1= np.argmin(v[inds])
+		for j in np.where(V[:,inds[i1]]>0)[0]:
+			V[j,i]=0
+			p=np.sum(Pp[np.where(V[j,inds]>0)[0]])
+			for i in np.where(V[j,:]>0)[0]:
+				if Pt-p-Pp[i] >0:
+					p+=Pp[i]
+					V[j,i]+=1
+					V1[j,i]-=1
+		inds=np.delete(inds,i1)
+	R=[]
+	p=0
+	v=np.sum(V,axis=0)
+	for i in np.argsort(v)[::-1]:
+		if Pt-p-Pp[i] >0:
+			R+=[i]
+			p+=Pp[i]
+			
+	return R,V
+	
+
+def vote(Np,Pt,Nv,method):
+	Ps=np.random.randn(Np)
+	Pp=np.random.randint(1,100,Np)
+
+	bestchoice=[]
+	p=0	
+	for i in np.argsort(Ps)[::-1]:
+			if Pt-p-Pp[i] >0:
+				bestchoice+=[i]
+				p+=Pp[i]
+
+	prefs=[]
+	for i in range(Nv):
+		s=Ps+np.random.randn(Np)*1
+		prefs+=[list(np.argsort(s)[::-1])]
+	if method=='cumulative':
+		(R,V)=CV(prefs,Pp,Pt)
+	elif method=='instant runoff':
+		(R,V)=IRV(prefs,Pp,Pt,0.5)
+	elif method=='IRV1':
+		(R,V)=IRV(prefs,Pp,Pt,1.0)
+	elif method=='simple':
+		(R,V)=simple(prefs,Pp,Pt)
+	elif method=='cost-aware':
+		(R,V)=cost_aware(prefs,Pp,Pt)
+	return R,bestchoice,V,Pp
+
+#methods=['simple','cost-aware','CV','IRV']
+methods=['cost-aware','cumulative','instant runoff']
+M=len(methods)
+Pideal=[[]]*M
+Preal=[[]]*M
+
+L=[[]]*M
+A=[[]]*M
+
+REP=5000
+for rep in range(REP):
+	if rep%10==0:
+		print rep
+	for m,method in enumerate(methods):
+		(R,bestchoice,V,Pp)= vote(Np,Pt,Nv,method=method)
+		
+		for r in R:
+			Preal[m]=Preal[m]+[Pp[r]]
+		for r in bestchoice:
+			Pideal[m]=Pideal[m]+[Pp[r]]
+		for r in R:
+			if not r in bestchoice:
+				A[m]=A[m]+[Pp[r]]
+		for r in bestchoice:
+			if not r in R:
+				L[m]=L[m]+[Pp[r]]
+
+
+colors=['green','blue','red']
+colors=['green','blue','red','black']
+plt.figure()
+for m in range(M):
+	Nh=10*np.arange(11)
+	hist1, bin_edges=np.histogram(Pideal[m],Nh)
+	hist2, bin_edges=np.histogram(Preal[m],Nh)
+
+	plt.bar(bin_edges[0:-1],(hist2-hist1).astype(float)/REP,width=Pt/len(Nh),color=colors[m], label=methods[m])
+plt.ylabel('Mean difference from ideal cost distribution')
+plt.xlabel('cost')
+plt.legend()
+
+
+
+plt.figure()
+Nh=10*np.arange(11)
+for m in range(M):
+	print methods[m],len(A[m]),len(L[m])
+	histA, bin_edges=np.histogram(A[m],Nh)
+	histL, bin_edges=np.histogram(L[m],Nh)
+	plt.bar((bin_edges[0:-1]),histA.astype(float)/REP,width=Pt/len(Nh),color=colors[m], label=methods[m])
+	plt.bar((bin_edges[0:-1]),-histL.astype(float)/REP,width=Pt/len(Nh),color=colors[m])
+plt.xlabel('cost')
+plt.ylabel('Mean difference from ideal allocation')
+plt.legend()
+plt.show()
