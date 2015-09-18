@@ -2,6 +2,9 @@
 
 # Mecanismos de voto para presupuestos participativos
 
+
+## Sistemas de voto: ventajas y desventajas
+
 Los sistemas de votación para elegir presupuestos participativos tienen una complejidad añadida sobre los sistemas de voto de elección de representantes: cada opción tiene un coste económico diferente. Esto aumenta la complejidad para el votante, y también introduce una serie de efectos no deseados en algunos métodos de votación [1].
 
 Voto simple: cada votante vota un número fijo de proyectos. Es el mecanismo más simple, pero genera desigualdad, ya que el voto de quienes votan proyectos caros vale más que el de quienes votan proyectos de bajo coste.
@@ -10,13 +13,13 @@ Recuento sensitivo al coste: Similar al voto simple, pero en el recuento cada pr
 
 Voto acumulativo: los votos valen según el coste de los proyectos. Un votante tiene una cantidad de presupuesto para votar a repartir entre diferentes proyectos.
 
-Voto transferible: permite transferir votos de proyectos descartados a otros que sí pueden ser elegidos. Por ejemplo, el mecanismo de segunda vuelta instantánea (*instant runoff voting*) elimina secuencialmente las propuestas con menos votos y transfiere sus votos a las siguientes preferencias.
+Voto transferible: permite transferir votos de proyectos descartados a otros que sí pueden ser elegidos. Por ejemplo, el mecanismo de segunda vuelta instantánea (*instant runoff voting*) elimina secuencialmente las propuestas con menos votos y transfiere sus votos a las siguientes preferencias. Como contrapartida, se aumenta la complejidad a la hora de votar.
 
 
 
-![](differences_in_cost_distribution.png)
+![](mean-difference-in-cost-distribution.png)
 Figura 1
 
-![](differences_from_ideal_allocation.png)
+![](difference-from-ideal-allocation.png)
 
 [1] http://www.accuratedemocracy.com/p_need2.htm
