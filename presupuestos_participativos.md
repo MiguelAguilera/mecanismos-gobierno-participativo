@@ -3,7 +3,7 @@
 # Mecanismos de voto para presupuestos participativos
 
 
-## Sistemas de voto: ventajas y desventajas
+## Sistemas de voto en presupuestos participativos: ventajas y desventajas
 
 Los sistemas de votación para elegir presupuestos participativos tienen una complejidad añadida sobre los sistemas de voto de elección de representantes: cada opción tiene un coste económico diferente. Esto aumenta la complejidad para el votante, y también introduce una serie de efectos no deseados en algunos métodos de votación [1].
 
@@ -30,7 +30,7 @@ Los votantes votarán proyectos en orden según sus preferencias hasta agotar lo
 Probaremos tres sitemas de votación:
 * Voto sensitivo al coste: cada votante podrá votar hasta cuatro proyectos de cualquier coste. El valor de cada voto se divide entre el coste del proyecto a la hora del recuento.
 * Voto acumulativo: cada votante podrá votar proyectos hasta acabar con el presupuesto disponible $$C$$
-* Voto acumulativo transferible: cada votante podrá votar proyectos hasta acabar con $$k$$ veces el presupuesto disponible $$C$$. Los proyectos hasta un valor $$C$$ se considerarán como la primera opción del votante, y a partir de ese momento y hasta alcanzar un valor de $$k\cdot C$$, los proyectos se considerarán como la segunda opción del votante. Para calcular los votos se utiliza un método de segunda vuelta instantánea, en el que los proyectos con menos votos son utilizados, y sus votos son transferidos a proyectos elegidos como segunda opción. Utilizamos un valor de $$k=1.5$. Valores más altos tienen resultados ligeramente mejores, pero por elegimos un valor pequeño debido a que presentaría una modificación más ligera en la experiencia del votante respecto al voto acumulativo.
+* Voto acumulativo transferible: cada votante podrá votar proyectos hasta acabar con $$k$$ veces el presupuesto disponible $$C$$. Los proyectos hasta un valor $$C$$ se considerarán como la primera opción del votante, y a partir de ese momento y hasta alcanzar un valor de $$k\cdot C$$, los proyectos se considerarán como la segunda opción del votante. Para calcular los votos se utiliza un método de segunda vuelta instantánea, en el que los proyectos con menos votos son utilizados, y sus votos son transferidos a proyectos elegidos como segunda opción. Utilizamos un valor de $$k=1.5$$. Valores más altos tienen resultados ligeramente mejores, pero por elegimos un valor pequeño debido a que presentaría una modificación más ligera en la experiencia del votante respecto al voto acumulativo.
 
 Cada sistema de votación lo compararemos con una distribucion ideal del presupuesto. Dado que conocemos las preferencias iniciales de cada proyecto $f_p$, elegiremos la distribucion de proyectos que tiene una mayor valor acumulado de preferencia ajustándose al presupuesto disponible.
 
@@ -47,6 +47,15 @@ En segundo lugar, calculamos el número de proyectos que resultan elegidos en se
 
 ![](mean-difference-from-ideal-allocation.png)
 Figura 2.
+
+
+
+## Conclusión
+
+Se recomiendo añadir un sistema preferencial al voto acumulativo. 
+Para minimizar la experiencia de usuario simplemente podría modificarse la barra de coste hasta 1.5 veces el total del presupuesto, marcando el primer tramo de presupuesto disponible como opciones preferenciales y el 0.5 restante como segundas opciones.
+
+
 
 [1] http://www.accuratedemocracy.com/p_need2.htm
 
