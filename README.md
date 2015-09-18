@@ -1,7 +1,7 @@
 Mecanismos de Gobierno Participativo
 =======
 
-Análisis de mecanismos de gobierno participativo. A través de modelos analizamos diferentes mecanismos de gobernanza participativa.
+Análisis de mecanismos de gobierno participativo a través de modelos y análisis de datos..
 
 Puedes leer este documento en https://www.gitbook.com/book/maguilera/mecanismos-gobierno-participativo/details
 
