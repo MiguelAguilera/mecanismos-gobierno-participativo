@@ -21,7 +21,7 @@ Voto transferible: permite transferir votos de proyectos descartados a otros que
 Durante los últimos años, uno de los sistemas más efectivos de presupuestos participativos ha sido el programa Betri Hverfi en Reikjavík [2], a través de una plataforma online de votación mediante un sistema de voto acumulativo [4]. La interfaz de la página, similar a entornos de compra por internet, permite a cada ciudadano "gastar" su presupuesto en los proyectos que decida, recibiendo feedback visual de la distribución del presupuesto [3] y por tanto promoviendo un efecto pedagógico al hacer más consciente al usuario del coste de los proyectos y las limitaciones del presupuesto (Figura 1).
 
 
-![](PB-Reykjavik)
+![](PB-Reykjavik.png)
 Figura 1. Interfaz del sistema de voto del programa Betri Hverfi en Reikjavík. Extraído de [3].
 
 Nuestro objetivo es comprobar la eficacia del sistema de voto cumulativo comparativamente con otros sistemas, y explorar la posibilidad de mejorar el sistema mediante algún sistema de voto preferencial.
