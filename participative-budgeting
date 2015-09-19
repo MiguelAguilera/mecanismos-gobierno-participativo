@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import matplotlib.pyplot as plt
-import json
 import numpy as np
 
-Np=10
+Np=16
 Pt=100
 Nv=1000
 
@@ -147,6 +146,8 @@ for rep in range(REP):
 				L[m]=L[m]+[Pp[r]]
 
 
+print A
+
 colors=['green','blue','red']
 colors=['green','blue','red','black']
 plt.figure()
@@ -155,11 +156,11 @@ for m in range(M):
 	hist1, bin_edges=np.histogram(Pideal[m],Nh)
 	hist2, bin_edges=np.histogram(Preal[m],Nh)
 
+
 	plt.bar(bin_edges[0:-1],(hist2-hist1).astype(float)/REP,width=Pt/len(Nh),color=colors[m], label=methods[m])
 plt.ylabel('Mean difference from ideal cost distribution')
 plt.xlabel('cost')
 plt.legend()
-
 
 
 plt.figure()
