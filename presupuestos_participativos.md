@@ -38,7 +38,7 @@ Probaremos tres sitemas de votación:
 
 Cada sistema de votación lo compararemos con una distribucion ideal del presupuesto. Dado que conocemos las preferencias iniciales de cada proyecto $f_p$, elegiremos la distribucion de proyectos que tiene una mayor valor acumulado de preferencia ajustándose al presupuesto disponible.
 
-Para cada sistema de votación, realizamos 5000 simulaciones y las comparamos con la distribución ideal.
+Para cada sistema de votación, realizamos 5000 simulaciones y las comparamos con la distribución ideal. El código utilizado puede encontrarse [aquí](https://github.com/MiguelAguilera/mecanismos-gobierno-participativo/blob/master/participative-budgeting)
 
 En primer lugar, calculamos la distribución de proyectos elegidos según su coste, mediante un histograma de 10 valores, y comparamos la distribución ideal con los diferentes sistemas, obteniendo los resultados mostrados en la Figura  1. Como podemos ver, todos los sistemas sobrerrepresentan a los proyectos con valores más pequeños. Sin embargo, la distancia respecto a la distribución ideal es mucho más pequeña en el sistema de voto preferencial que en las otras dos, mejorando considerablemente su funcionamiento.
 
@@ -51,12 +51,10 @@ En segundo lugar, calculamos el número de proyectos que resultan elegidos en se
 ![](mean-difference-from-ideal-allocation.png)
 Figura 3. Diferencia en el número de proyectos elegidos en la distribución ideal y en cada sistema de votación: voto sensitivo al coste (verde), voto acumulativo (azul) y voto preferencial con segunda ronda instantánea (rojo). El eje positivo representa el número de proyectos que han sido elegidos en cada sistema de votación y no en la distribución ideal. El eje negativo representa el número de proyectos elegidos en la distribución ideal y no en cada uno de los sistemas. El sistema de voto preferencial con segunda ronda instantánea tiene una distribución mucho más parecida a la ideal que los otros dos.
 
-
-
 ## Conclusión
 
-Se recomiendo añadir un sistema preferencial al voto acumulativo. 
-Para minimizar la experiencia de usuario simplemente podría modificarse la barra de coste hasta 1.5 veces el total del presupuesto, marcando el primer tramo de presupuesto disponible como opciones preferenciales y el 0.5 restante como segundas opciones.
+Los resultados provisionales de las simulaciones realizadas indican que es recomendable añadir un sistema preferencial al voto acumulativo. En concreto, un método con una segunda preferencia igual a un 50% adicional del presupuesto con un sistema de recuento de segunda vuelta instantánea supone una mejora importante respecto al sistema de voto acumulativo utilizado en los presupuestos participativos de la ciudad de Reikjavik.
+Para minimizar la experiencia de usuario simplemente podría modificarse la barra de coste hasta 1.5 veces el total del presupuesto, marcando el primer tramo de presupuesto disponible como opciones preferenciales y el 0.5 restante como segundas opciones (Figura 4).
 
 ![](PB-preferential-voting)
 Figura 4. Esquema del interfaz que podría utilizar el sistema de voto preferencial con segunda vuelta instantánea propuesto, añadiendo la posibilidad de voto preferencial minimizando el cambio en la experiencia de usuario. Adaptado a partir de [3].
