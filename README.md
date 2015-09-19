@@ -9,5 +9,5 @@ Puedes contribuir a este documento desde Github en https://github.com/MiguelAgui
 
 Contenidos:
 
-[Introducción](README.md)
-[Presupuestos participativos](presupuestos_participativos.md)
+*[Introducción](README.md)
+*[Presupuestos participativos](presupuestos_participativos.md)
