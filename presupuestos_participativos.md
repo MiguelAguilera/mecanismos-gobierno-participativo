@@ -38,7 +38,7 @@ Probaremos tres sitemas de votación:
 
 Cada sistema de votación lo compararemos con una distribucion ideal del presupuesto. Dado que conocemos las preferencias iniciales de cada proyecto $f_p$, elegiremos la distribucion de proyectos que tiene una mayor valor acumulado de preferencia ajustándose al presupuesto disponible.
 
-Para cada sistema de votación, realizamos 5000 simulaciones y las comparamos con la distribución ideal. El código utilizado puede encontrarse [aquí](https://github.com/MiguelAguilera/mecanismos-gobierno-participativo/blob/master/participative-budgeting)
+Para cada sistema de votación, realizamos 5000 simulaciones y las comparamos con la distribución ideal. El código utilizado puede encontrarse [aquí](https://github.com/MiguelAguilera/mecanismos-gobierno-participativo/blob/master/code/participative-budgeting)
 
 En primer lugar, calculamos la distribución de proyectos elegidos según su coste, mediante un histograma de 10 valores, y comparamos la distribución ideal con los diferentes sistemas, obteniendo los resultados mostrados en la Figura  1. Como podemos ver, todos los sistemas sobrerrepresentan a los proyectos con valores más pequeños. Sin embargo, la distancia respecto a la distribución ideal es mucho más pequeña en el sistema de voto preferencial que en las otras dos, mejorando considerablemente su funcionamiento.
 
