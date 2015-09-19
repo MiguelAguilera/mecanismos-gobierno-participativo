@@ -56,7 +56,7 @@ Figura 3. Diferencia en el número de proyectos elegidos en la distribución ide
 Los resultados provisionales de las simulaciones realizadas indican que es recomendable añadir un sistema preferencial al voto acumulativo. En concreto, un método con una segunda preferencia igual a un 50% adicional del presupuesto con un sistema de recuento de segunda vuelta instantánea supone una mejora importante respecto al sistema de voto acumulativo utilizado en los presupuestos participativos de la ciudad de Reikjavik.
 Para minimizar la experiencia de usuario simplemente podría modificarse la barra de coste hasta 1.5 veces el total del presupuesto, marcando el primer tramo de presupuesto disponible como opciones preferenciales y el 0.5 restante como segundas opciones (Figura 4).
 
-![](PB-preferential-voting)
+![](PB-preferential-voting.png)
 Figura 4. Esquema del interfaz que podría utilizar el sistema de voto preferencial con segunda vuelta instantánea propuesto, añadiendo la posibilidad de voto preferencial minimizando el cambio en la experiencia de usuario. Adaptado a partir de [3].
 
 [1] http://www.accuratedemocracy.com/p_need2.htm
