@@ -18,7 +18,11 @@ Voto transferible: permite transferir votos de proyectos descartados a otros que
 
 ## Comparativa
 
-Durante los últimos años, uno de los sistemas más efectivos de presupuestos participativos ha sido el programa Betri Hverfi en Reikjavík [2], a través de una plataforma online de votación mediante un sistema de voto acumulativo [4]. La interfaz de la página, similar a entornos de compra por internet, permite a cada ciudadano "gastar" su presupuesto en los proyectos que decida, recibiendo feedback visual de la distribución del presupuesto [3] y por tanto promoviendo un efecto pedagógico al hacer más consciente al usuario del coste de los proyectos y las limitaciones del presupuesto.
+Durante los últimos años, uno de los sistemas más efectivos de presupuestos participativos ha sido el programa Betri Hverfi en Reikjavík [2], a través de una plataforma online de votación mediante un sistema de voto acumulativo [4]. La interfaz de la página, similar a entornos de compra por internet, permite a cada ciudadano "gastar" su presupuesto en los proyectos que decida, recibiendo feedback visual de la distribución del presupuesto [3] y por tanto promoviendo un efecto pedagógico al hacer más consciente al usuario del coste de los proyectos y las limitaciones del presupuesto (Figura 1).
+
+
+![](PB-Reykjavik)
+Figura 1. Interfaz del sistema de voto del programa Betri Hverfi en Reikjavík. Extraído de [3].
 
 Nuestro objetivo es comprobar la eficacia del sistema de voto cumulativo comparativamente con otros sistemas, y explorar la posibilidad de mejorar el sistema mediante algún sistema de voto preferencial.
 
@@ -39,14 +43,13 @@ Para cada sistema de votación, realizamos 5000 simulaciones y las comparamos co
 En primer lugar, calculamos la distribución de proyectos elegidos según su coste, mediante un histograma de 10 valores, y comparamos la distribución ideal con los diferentes sistemas, obteniendo los resultados mostrados en la Figura  1. Como podemos ver, todos los sistemas sobrerrepresentan a los proyectos con valores más pequeños. Sin embargo, la distancia respecto a la distribución ideal es mucho más pequeña en el sistema de voto preferencial que en las otras dos, mejorando considerablemente su funcionamiento.
 
 
-
 ![](mean-difference-from-ideal-cost-distribution.png)
-Figura 1.
+Figura 2. Diferencia en la distribución de proyectos según coste entre la distribución ideal de proyectos y cada sistema de votación: voto sensitivo al coste (verde), voto acumulativo (azul) y voto preferencial con segunda ronda instantánea (rojo). El sistema de voto preferencial con segunda ronda instantánea tiene una distribución mucho más parecida a la ideal que los otros dos.
 
 En segundo lugar, calculamos el número de proyectos que resultan elegidos en según cada sistema que no son elegidos en la distribución ideal en cada rango de coste, representándolos en el eje positivo de la Figura 2. Calculamos también el número de proyectos que resultan elegidos en la distribución ideal pero no en el sistema de votación, representándolos en el eje negativo de la Figura 2. De nuevo, vemos que el sistema de voto prefencial es muy superior a los otros dos, teniendo una distribución mucho más cercana a la ideal.
 
 ![](mean-difference-from-ideal-allocation.png)
-Figura 2.
+Figura 3. Diferencia en el número de proyectos elegidos en la distribución ideal y en cada sistema de votación: voto sensitivo al coste (verde), voto acumulativo (azul) y voto preferencial con segunda ronda instantánea (rojo). El eje positivo representa el número de proyectos que han sido elegidos en cada sistema de votación y no en la distribución ideal. El eje negativo representa el número de proyectos elegidos en la distribución ideal y no en cada uno de los sistemas. El sistema de voto preferencial con segunda ronda instantánea tiene una distribución mucho más parecida a la ideal que los otros dos.
 
 
 
@@ -55,7 +58,8 @@ Figura 2.
 Se recomiendo añadir un sistema preferencial al voto acumulativo. 
 Para minimizar la experiencia de usuario simplemente podría modificarse la barra de coste hasta 1.5 veces el total del presupuesto, marcando el primer tramo de presupuesto disponible como opciones preferenciales y el 0.5 restante como segundas opciones.
 
-
+![](PB-preferential-voting)
+Figura 4. Esquema del interfaz que podría utilizar el sistema de voto preferencial con segunda vuelta instantánea propuesto, añadiendo la posibilidad de voto preferencial minimizando el cambio en la experiencia de usuario. Adaptado a partir de [3].
 
 [1] http://www.accuratedemocracy.com/p_need2.htm
 
