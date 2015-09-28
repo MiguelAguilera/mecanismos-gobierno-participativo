@@ -37,7 +37,7 @@ El problema es que no captura exactamente el consenso de una propuesta.
 Una propuesta con 10 positivos y 1 negativo tiene el mismo número de puntos que una propuesta con 100 positivos y 99 negativos.
 
 ![](postivos-menos-negativos.png)
-Figura
+Figura 2. Distribución de puntuación según el número de votos de cada tipo calculando el número de votos positivos menos negativos.
 
 ### Porcentaje de positivos
 
@@ -46,6 +46,7 @@ El problema es que no captura la cantidad de apoyo de cada propuesta.
 Una propuesta con 5 positivos tendría más puntos que una propuesta con 100 positivos y 10 negativos.
 
 ![](porcentaje.png)
+Figura 3. Distribución de puntuación según el número de votos de cada tipo calculando el porcentaje de votos positivos.
 
 ### Consenso aproximado
 
@@ -58,6 +59,7 @@ def consenso(ups, downs)
 La fórmula que hace es calcular la fracción de votos positivos, y multliplicarlo por el logaritmo base dos del número de votos. El log2(ups+downs) hace que cada vez que la propuesta tiene el doble de votos que otra se suma un punto. Así, si tenemos una propuesta con 100 votos y 90% de positivos, se considera más de consenso que p.ej. una propuesta con 5 votos y 100% de positivos.
 
 ![](consenso-aproximado.png)
+Figura 2. Distribución de puntuación según el número de votos de cada tipo calculando la fórmula de 'consenos aproximado'.
   
   [0] https://github.com/reddit/reddit/blob/c6f959504466333c0d7d51c131240473aaf78b04/r2/r2/lib/db/_sorts.pyx
   
