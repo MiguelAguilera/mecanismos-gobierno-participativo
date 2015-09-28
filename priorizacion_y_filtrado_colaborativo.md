@@ -3,6 +3,7 @@
 
 ### Algoritmo de Reddit
 
+El algorítmo de reddit, tal y como está definido en su código fuente [0] utiliza la siguiente fórmula:
 ```
 cpdef double _hot(long ups, long downs, double date):
     """The hot formula. Should match the equivalent function in postgres."""
