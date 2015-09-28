@@ -23,7 +23,7 @@ cpdef double _hot(long ups, long downs, double date):
  de forma que el número de puntos de cada propuesta se divide entre 10 cada 12 horas aproximadamente 
  (es decir, en 1 día su valor se divide entre 100).
  Para procesos con dinámicas más largas, simpemente habría que modificar el parámetro con valor 45000 en el algoritmo.
- Por ejemplo, sustituyendo la fórmula final por `return round(sign * order + seconds / 9000, 7)`, una propuesta con
+ Por ejemplo, sustituyendo la fórmula final por `return round(sign * order + seconds / 225000, 7)`, una propuesta con
  5 días de antiguedad necesitaría 5 días para que su valor se dividiera entre 100.
  
  #Altoritmos de ordenación de propuestas según consenso
