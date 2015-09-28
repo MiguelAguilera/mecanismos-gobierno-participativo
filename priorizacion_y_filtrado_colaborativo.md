@@ -1,7 +1,7 @@
 
 ## Algoritmos de filtrado colaborativo
 
-### Algoritmo de reddit
+### Algoritmo de Reddit
 
 ```
 cpdef double _hot(long ups, long downs, double date):
@@ -22,12 +22,11 @@ cpdef double _hot(long ups, long downs, double date):
  El algorítmo de Reddit está diseñado para que el contenido se renueve de forma más o menos diaria, 
  de forma que el número de puntos de cada propuesta se divide entre 10 cada 12 horas aproximadamente 
  (es decir, en 1 día su valor se divide entre 100). Esta dinámica está controlada por un parámetro de decaimiento $T$ que en el código de arriba es igual a 45000.
- Para procesos con dinámicas más largas, simpemente habría que modificar el parámetro con valor 45000 en el algoritmo.
- Por ejemplo, sustituyendo la fórmula final por `return round(sign * order + seconds / 225000, 7)`, una propuesta con
- 5 días de antiguedad necesitaría 5 días para que su valor se dividiera entre 100.
+ Para procesos con dinámicas más largas (p.ej. procesos más deliberativos), simpemente habría que modificar el parámetro con valor 45000 en el algoritmo por un valor mayor.
+ Por ejemplo, multiplicar el valor de T por 5, sustituyendo la fórmula final por `return round(sign * order + seconds / 225000, 7)`, conseguimos que una propuesta con 5 días de antiguedad necesitaría 5 días para que su valor se dividiera entre 100.
  
  ![](decay.png)
- Figura 1. Comparación del decaimiento de la puntuación para diferentes parametros de $T$. En azul, la configuración del algoritmo tal y como la usa reddit, ajustado para un periodo de unas 12 horas, y en rojo, el algorimto ajustado para una temporalidad más larga de 60 horas.
+ Figura 1. Comparación del decaimiento de la puntuación para diferentes parametros de $T$. En azul, la configuración del algoritmo tal y como la usa Reddit, ajustado para un periodo de unas 12 horas, y en rojo, el algorimto ajustado para una temporalidad más larga de 60 horas.
  
  #Altoritmos de ordenación de propuestas según consenso
 
