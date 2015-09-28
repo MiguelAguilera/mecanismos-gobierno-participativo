@@ -59,7 +59,7 @@ def consenso(ups, downs)
 La fórmula que hace es calcular la fracción de votos positivos, y multliplicarlo por el logaritmo base dos del número de votos. El log2(ups+downs) hace que cada vez que la propuesta tiene el doble de votos que otra se suma un punto. Así, si tenemos una propuesta con 100 votos y 90% de positivos, se considera más de consenso que p.ej. una propuesta con 5 votos y 100% de positivos.
 
 ![](consenso-aproximado.png)
-Figura 2. Distribución de puntuación según el número de votos de cada tipo calculando la fórmula de 'consenos aproximado'.
+Figura 2. Distribución de puntuación según el número de votos de cada tipo calculando la fórmula de 'consenso aproximado'.
   
   [0] https://github.com/reddit/reddit/blob/c6f959504466333c0d7d51c131240473aaf78b04/r2/r2/lib/db/_sorts.pyx
   
