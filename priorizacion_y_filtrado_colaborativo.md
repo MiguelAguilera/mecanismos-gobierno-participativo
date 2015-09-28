@@ -3,7 +3,7 @@
 
 ### Algoritmo de Reddit
 
-El algorítmo de reddit, tal y como está definido en su código fuente [0] sigue la siguiente fórmula:
+El algoritmo de reddit, tal y como está definido en su código fuente [0] sigue la siguiente fórmula:
 ```
 def hot(ups, downs, date):
     s = score(ups, downs)
