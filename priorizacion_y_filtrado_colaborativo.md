@@ -18,7 +18,6 @@ def hot(ups, downs, date):
     return round(sign * order + seconds / 45000, 7)
     
  ```
- 
  El algorítmo de Reddit está diseñado para que el contenido se renueve de forma más o menos diaria, 
  de forma que el número de puntos de cada propuesta se divide entre 10 cada 12 horas aproximadamente 
  (es decir, en 1 día su valor se divide entre 100). Esta dinámica está controlada por un parámetro de decaimiento $T$ que en el código de arriba es igual a 45000.
