@@ -11,4 +11,5 @@ Puedes contribuir a este documento desde Github en https://github.com/MiguelAgui
 
 * [Introducción](README.md)
 * [Presupuestos participativos](presupuestos_participativos.md)
+* [Priorización y filtrado colaborativo](priorizacion_y_filtrado_colaborativo.md)
 
