@@ -53,7 +53,7 @@ Figura 3. Distribución de puntuación según el número de votos de cada tipo c
 Una opción que recoge lo mejor de las dos anteriores es calcular tanto la cantidad de apoyo como el porcentaje de positivos.
 En plataformas para encontrar propuestas de consenso como las utilizadas por Zaragoza en Común o Ahora Madrid se utilizó la siguiente fórmula:
 ```
-def consenso(ups, downs)
+def consenso_aproximado(ups, downs):
   return log2(ups+downs) * ((ups-downs)/(ups+downs))
 ```
 La fórmula que hace es calcular la fracción de votos positivos, y multliplicarlo por el logaritmo base dos del número de votos. El log2(ups+downs) hace que cada vez que la propuesta tiene el doble de votos que otra se suma un punto. Así, si tenemos una propuesta con 100 votos y 90% de positivos, se considera más de consenso que p.ej. una propuesta con 5 votos y 100% de positivos.
