@@ -20,10 +20,18 @@ Basar la evaluación de un proceso de consulta en indicadores cuantitativos simp
 
 Siendo $$X$$ el conjunto de opciones en un proceso de consulta, la entropía $$H(X)$$ mide la cantidad de información recogida en el proceso de consulta. Por ejemplo, una consulta con tres posibles respuestas en las que el 99% opta por la respuesta $$A$$, el 1% por la respuesta $$B$$, y el 0% por la $$C$$, tendrá una entropía de 0.081 bits, mientras que una consulta en la que el voto entre $$A$$, $$B$$ y $$C$$ se reparta con el 50, 30 y 20% tiene una entropía de 1.49 bits, y por tanto recoge mucha más información.
 
-Para consultas con diferentes preguntas con opciones de respuesta $$X_n$$, $$nn \in 
+Para consultas con diferentes preguntas con opciones de respuesta $$X_n$$, $$n \in \{1, 2, ... , N\}$$, puede obtenerse la entropía total como $$\sum_{n=1}^N H(X_n)$$.
 
+## TSE Complexity
 
+The Tononi-Sporns-Edelmans (TSE) complexity [TSE94] is a complexity measure for distributions. It is designed so that it maximized by distributions where small subsets of random variables are loosely coupled but the overall distribution is tightly coupled.
 
+$$TSE(X) = \sum_{k=1}^{|X|} \left( {N \choose k}^{-1} \sum_{\substack{y \subseteq X \\ |y|=k}} \left( H(y) \right) - \frac{k}{|X|}H(X) \right) $$
 
+### Ejemplo 1: resultados de procesos de votación o encuesta ciudadana
+
+En un caso de un proceso de consultas, la máxima Entropía correspondería con una situación en la que cada participante elige respuestas al azar.Para que un proceso de consulta capture la complejidad social de una situación, no sólo debe ser capaz de recoger mucha información sino de recoger información estructurada.
+
+En un proceso con varias preguntas $$X = {y_1, y_2, ... , y_N}$$, la complejidad TSE(X) permite medir la riqueza de la estructura de respuestas recogidas. Esto es, si las respuestas obtenidas permiten identificar diferentes grupos con preferencias similares, clasificar diferenets posiciones políticas y sociales coherentes, etc. el valor de complejidad será alto. Si las respuestas no son más que "ruido" estadístico, los valores de complejidad tenderán a cero. 
 
 [0] https://es.wikipedia.org/wiki/Entrop%C3%ADa_%28informaci%C3%B3n%29
