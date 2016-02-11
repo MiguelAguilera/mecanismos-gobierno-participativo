@@ -33,9 +33,11 @@ Como hemos visto arriba, el algoritmo de reddit es equivalente a un decaimiento 
 
 Podemos plantearnos como objetivo un algoritmo que equilibre la actividad a todas las escalas del sistema. Por ejemplo, podríamos querer que el algoritmo trate de tener en portada las mejores propuestas a diferentes escalas temporales (p.ej. la mejor propuesta del día, la mejor de la semana, la mejor del mes, etc.).
 
-Una forma para conseguir esto sería tener en cuenta el decaimiento a diferentes escalas, siendo $s = v·\sum_i e^(-h_i·t)$ y `h_i` diferentes constantes que ponderan la presencia relativa de una escala temporal concreta.
+Una forma para conseguir esto sería tener en cuenta el decaimiento a diferentes escalas, siendo $$s = v·\sum_i e^(-h_i·t)$$ y $$h_i$$ diferentes constantes que ponderan la presencia relativa de una escala temporal concreta.
 
-Para equilibrar la presencia de diferentes escalas temporales, es necesario optimizar el valor de las variables `h_i` para tener la mayor diversidad de escalas temporales entre las propuestas de la portada. Para ello, podemos utilizar una medida de entropía $$H(X) = -\sum{p(x_i)log_2(x_i)}$$
+Para equilibrar la presencia de diferentes escalas temporales, es necesario optimizar el valor de las variables $$h_i$$ para tener la mayor diversidad de escalas temporales entre las propuestas de la portada. Para ello, podemos utilizar una medida de entropía $$H(X) = -\sum_x{p(x)log_2(x)}$$, en la que x son las escalas temporales del tiempo de vida de las propuestas en la portada. Estas escalas deberían estar definidas de forma logarítmica, p.ej. de forma que $$x$$ es igual a 0 si su duración es menor de un día, 1 si es menor que 2 días, 2 si es menor que 4, etc.
+
+Un ejemplo de optimización de los valores de $$h_i$$ para valores reales utilizando un algoritmo genético puede encontrarse [aquí](https://github.com/MiguelAguilera/mecanismos-gobierno-participativo/tree/master/code/multiscale-sorting-algorithm).
  
 #Altoritmos de ordenación de propuestas según consenso
 
