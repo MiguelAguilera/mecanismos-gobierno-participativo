@@ -29,11 +29,11 @@ def hot(ups, downs, date):
  
 ### Decaimiento multiescala
 
-Como hemos visto arriba, el algoritmo de reddit es equivalente a un decaimiento exponencial, en el que el valor de un post es igual a `s = v·e^(-h·t)`, donde `v` es el número de votos y `h` es una constante. El comportamiento de este algoritmo filtra la actividad en una escala temporal concreta.
+Como hemos visto arriba, el algoritmo de reddit es equivalente a un decaimiento exponencial, en el que el valor de un post es igual a $$s = v·e^(-h·t)$$, donde $$v$$ es el número de votos y $$h$$ es una constante. El comportamiento de este algoritmo filtra la actividad en una escala temporal concreta.
 
 Podemos plantearnos como objetivo un algoritmo que equilibre la actividad a todas las escalas del sistema. Por ejemplo, podríamos querer que el algoritmo trate de tener en portada las mejores propuestas a diferentes escalas temporales (p.ej. la mejor propuesta del día, la mejor de la semana, la mejor del mes, etc.).
 
-Una forma para conseguir esto sería tener en cuenta el decaimiento a diferentes escalas, siendo `s = v·\sum_i e^(-h_i·t)` y `h_i` diferentes constantes que ponderan la presencia relativa de una escala temporal concreta.
+Una forma para conseguir esto sería tener en cuenta el decaimiento a diferentes escalas, siendo $s = v·\sum_i e^(-h_i·t)$ y `h_i` diferentes constantes que ponderan la presencia relativa de una escala temporal concreta.
 
 Para equilibrar la presencia de diferentes escalas temporales, es necesario optimizar el valor de las variables `h_i` para tener la mayor diversidad de escalas temporales entre las propuestas de la portada. Para ello, podemos utilizar una medida de entropía $$H(X) = -\sum{p(x_i)log_2(x_i)}$$
  
