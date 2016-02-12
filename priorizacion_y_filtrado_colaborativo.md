@@ -37,7 +37,7 @@ Una forma para conseguir esto sería tener en cuenta el decaimiento a diferentes
 
 Para equilibrar la presencia de diferentes escalas temporales, es necesario optimizar el valor de las variables $$h_i$$ para tener la mayor diversidad de escalas temporales entre las propuestas de la portada. Para ello, podemos utilizar una medida de entropía $$H(X) = -\sum_x{p(x)log_2(x)}$$, en la que x son las escalas temporales del tiempo de vida de las propuestas en la portada. Estas escalas deberían estar definidas de forma logarítmica, p.ej. de forma que $$x$$ es igual a 0 si su duración es menor de un día, 1 si es menor que 2 días, 2 si es menor que 4, etc.
 
-Un ejemplo de optimización de los valores de $$h_i$$ para valores reales utilizando un algoritmo genético puede encontrarse [aquí](https://github.com/MiguelAguilera/mecanismos-gobierno-participativo/tree/master/code/multiscale-sorting-algorithm).
+Un ejemplo de optimización de los valores de $$h_i$$ para valores reales utilizando un algoritmo genético microbiano [1] puede encontrarse [aquí](https://github.com/MiguelAguilera/mecanismos-gobierno-participativo/tree/master/code/multiscale-sorting-algorithm).
  
 #Altoritmos de ordenación de propuestas según consenso
 
@@ -73,4 +73,4 @@ La fórmula que hace es calcular la fracción de votos positivos, y multliplicar
 Figura 2. Distribución de puntuación según el número de votos de cada tipo calculando la fórmula de 'consenso aproximado'.
   
   [0] https://github.com/reddit/reddit/blob/c6f959504466333c0d7d51c131240473aaf78b04/r2/r2/lib/db/_sorts.pyx
-  
+  [1] Harvey, I. (2009). The microbial genetic algorithm. In Advances in artificial life. Darwin Meets von Neumann (pp. 126-133). Springer Berlin Heidelberg.
